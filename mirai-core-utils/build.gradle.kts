@@ -70,7 +70,11 @@ kotlin {
             }
         }
 
-        val jvmMain by getting
+        val jvmMain by getting {
+            dependencies {
+                compileOnly(`zxing-javase`)
+            }
+        }
 
         val jvmTest by getting {
             dependencies {

@@ -23,6 +23,7 @@ dependencies {
     api(project(":mirai-core"))
     api(project(":mirai-core-api"))
     api(project(":mirai-core-utils"))
+    api(`zxing-javase`)
 }
 
 if (System.getenv("MIRAI_IS_SNAPSHOTS_PUBLISHING")?.toBoolean() != true) {

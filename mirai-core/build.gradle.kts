@@ -102,6 +102,7 @@ kotlin {
         val jvmTest by getting {
             dependencies {
                 api(`kotlinx-coroutines-debug`)
+                api(`zxing-javase`)
                 //  implementation("net.mamoe:mirai-login-solver-selenium:1.0-dev-14")
             }
         }
