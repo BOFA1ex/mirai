@@ -28,6 +28,7 @@ fun includeProject(projectPath: String, dir: String? = null) {
 }
 
 includeProject(":mirai-core-utils")
+includeProject(":mirai-core-utils-platform-image")
 includeProject(":mirai-core-api")
 includeProject(":mirai-core")
 includeProject(":mirai-core-all")

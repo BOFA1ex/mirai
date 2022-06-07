@@ -7,15 +7,4 @@
  * https://github.com/mamoe/mirai/blob/dev/LICENSE
  */
 
-@file:JvmMultifileClass
-
-package net.mamoe.mirai.utils
-
-import android.graphics.Bitmap
-
-public actual typealias PlatformImage = Bitmap
-
-public actual fun generateQRCode(content: String, width: Int, height: Int): PlatformImage? {
-    // TODO
-    return null
-}
+package net.mamoe.mirai.utils.platformimage

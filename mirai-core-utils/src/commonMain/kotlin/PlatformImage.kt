@@ -14,12 +14,29 @@ package net.mamoe.mirai.utils
 
 public expect class PlatformImage
 
-/**
- * @return `null` --- Unsupported
- */
-public expect fun generateQRCode(
-    content: String,
-    width: Int,
-    height: Int
-): PlatformImage?
+public interface PlatformImageUtil {
+    public val available: Boolean
 
+    /**
+     * @return `null` --- Unsupported
+     */
+    public fun generateQRCode(
+        content: String,
+        width: Int,
+        height: Int
+    ): PlatformImage?
+
+    public companion object INSTANCE : PlatformImageUtil by initService()
+}
+
+private fun initService(): PlatformImageUtil {
+    return loadServiceOrNull(
+        PlatformImageUtil::class,
+        "net.mamoe.mirai.utils.platformimage.PlatformImageUtilImpl"
+    ) ?: DummyPIU
+}
+
+private object DummyPIU : PlatformImageUtil {
+    override val available: Boolean get() = false
+    override fun generateQRCode(content: String, width: Int, height: Int): PlatformImage? = null
+}
