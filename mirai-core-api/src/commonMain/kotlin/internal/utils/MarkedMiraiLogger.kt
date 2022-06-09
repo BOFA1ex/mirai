@@ -42,7 +42,7 @@ internal val MiraiLogger.markerOrNull get() = (this as? MarkedMiraiLogger)?.mark
  *
  * Calling [MarkedMiraiLogger.subLogger] if possible, and creating [MiraiLoggerMarkedWrapper] otherwise.
  */
-internal fun MiraiLogger.subLogger(name: String): MiraiLogger {
+internal fun MiraiLogger.subLoggerImpl(name: String): MiraiLogger {
     return subLoggerImpl(this, name)
 }
 
