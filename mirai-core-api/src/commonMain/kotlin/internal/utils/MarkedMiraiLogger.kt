@@ -37,15 +37,6 @@ internal fun Marker(name: String, vararg parents: Marker?): Marker {
 
 internal val MiraiLogger.markerOrNull get() = (this as? MarkedMiraiLogger)?.marker
 
-/**
- * Create a marked logger whose marker is a child of this' marker.
- *
- * Calling [MarkedMiraiLogger.subLogger] if possible, and creating [MiraiLoggerMarkedWrapper] otherwise.
- */
-internal fun MiraiLogger.subLoggerImpl(name: String): MiraiLogger {
-    return subLoggerImpl(this, name)
-}
-
 // used by mirai-core
 internal fun subLoggerImpl(origin: MiraiLogger, name: String): MiraiLogger {
     return if (origin is MarkedMiraiLogger) {
